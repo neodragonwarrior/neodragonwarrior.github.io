@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -308,6 +306,58 @@
       font-size: 0.88rem; font-weight: 500; line-height: 1.4;
     }
 
+    /* ── CTF ── */
+    #ctf { background: var(--bg); }
+    .ctf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .ctf-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.5rem;
+      position: relative; overflow: hidden;
+      transition: all 0.2s;
+    }
+    .ctf-card:hover { border-color: rgba(0,229,160,0.35); transform: translateY(-2px); }
+    .ctf-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
+      background: var(--accent);
+    }
+    .ctf-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem; padding: 0.25rem 0.65rem;
+      background: rgba(0,229,160,0.1);
+      border: 1px solid rgba(0,229,160,0.25);
+      border-radius: 100px; color: var(--accent);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    .ctf-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem; font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .ctf-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem; color: var(--accent2);
+      margin-bottom: 0.5rem;
+    }
+    .ctf-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
+    .ctf-flags {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem;
+    }
+    .ctf-flag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem; padding: 0.2rem 0.55rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 4px; color: var(--muted);
+    }
+
     /* ── AWARDS ── */
     #awards { background: var(--bg2); }
     .awards-row {
@@ -407,11 +457,12 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">AK/V</div>
+    <div class="nav-logo">AKV</div>
     <div class="nav-links">
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#certs">Certs</a>
+      <a href="#ctf">CTF</a>
       <a href="#awards">Awards</a>
       <a href="#contact">Contact</a>
     </div>
@@ -620,6 +671,83 @@
           <div class="cert-name">Capture-The-Flag Badge</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTF WINS -->
+  <section id="ctf">
+    <div class="section-inner">
+      <p class="section-label">Hacking Competitions</p>
+      <h2>CTF Wins 🚩</h2>
+      <div class="ctf-grid">
+
+        <div class="ctf-card">
+          <div class="ctf-badge">🥇 Rank 16 / 30 Teams</div>
+          <div class="ctf-name">Amazon AppSec CTF — APAC Final</div>
+          <div class="ctf-meta">26 Sep 2025 · Hack The Box · Team: neoarun</div>
+          <div class="ctf-desc">Qualified for and competed in the APAC Finals. Solved 2/11 challenges, earning 1,275 points against 30 elite teams.</div>
+          <div class="ctf-flags">
+            <span class="ctf-flag">Hack The Box</span>
+            <span class="ctf-flag">2/11 Solved</span>
+            <span class="ctf-flag">1,275 pts</span>
+            <span class="ctf-flag">AppSec</span>
+          </div>
+        </div>
+
+        <div class="ctf-card">
+          <div class="ctf-badge">🏅 Rank 26 / 154 Teams</div>
+          <div class="ctf-name">Amazon AppSec CTF — APAC</div>
+          <div class="ctf-meta">11 Sep – 13 Sep 2025 · Hack The Box · Team: neoarun</div>
+          <div class="ctf-desc">Solved 10/21 challenges for 7,575 points across 154 teams — strong enough to qualify for the APAC Finals. Also received a surprise swag box from Amazon! 🎁</div>
+          <div class="ctf-flags">
+            <span class="ctf-flag">Hack The Box</span>
+            <span class="ctf-flag">10/21 Solved</span>
+            <span class="ctf-flag">7,575 pts</span>
+            <span class="ctf-flag">Finals Qualifier</span>
+          </div>
+        </div>
+
+        <div class="ctf-card">
+          <div class="ctf-badge">🏆 Rank 117 / 900+ Teams</div>
+          <div class="ctf-name">Nullcon HackIM CTF</div>
+          <div class="ctf-meta">2026 · Team: dragonwarrior</div>
+          <div class="ctf-desc">Led team dragonwarrior to finish 117th out of 900+ teams with 1,214 points. Challenges spanned pwn, crypto, rev &amp; web.</div>
+          <div class="ctf-flags">
+            <span class="ctf-flag">1,214 pts</span>
+            <span class="ctf-flag">Pwn</span>
+            <span class="ctf-flag">Crypto</span>
+            <span class="ctf-flag">Rev</span>
+            <span class="ctf-flag">Web</span>
+          </div>
+        </div>
+
+        <div class="ctf-card">
+          <div class="ctf-badge">✅ All Green</div>
+          <div class="ctf-name">InfrasecVillage CTF</div>
+          <div class="ctf-meta">2026 · BSides Bangalore × W3-CS</div>
+          <div class="ctf-desc">Solved all challenges — achieved a perfect all-green scoreboard. Honored by Security BSides Bangalore and World Wide Women in Cyber Security (W3-CS) for this initiative.</div>
+          <div class="ctf-flags">
+            <span class="ctf-flag">All Challenges Solved</span>
+            <span class="ctf-flag">BSides Bangalore</span>
+            <span class="ctf-flag">W3-CS</span>
+          </div>
+        </div>
+
+        <div class="ctf-card">
+          <div class="ctf-badge">🎖 Badge</div>
+          <div class="ctf-name">Capture-The-Flag Badge</div>
+          <div class="ctf-meta">LinkedIn Certification</div>
+          <div class="ctf-desc">Earned the official LinkedIn Capture-The-Flag badge, recognizing demonstrated skills in CTF-style security challenges.</div>
+          <div class="ctf-flags">
+            <span class="ctf-flag">Certified</span>
+            <span class="ctf-flag">LinkedIn</span>
+          </div>
+        </div>
+
+      </div>
+      <p style="font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--muted); margin-top:1.5rem;">
+        🚩 More CTF results and writeups — see LinkedIn profile
+      </p>
     </div>
   </section>
 
